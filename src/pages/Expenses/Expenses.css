@@ -1,0 +1,68 @@
+.exp-page {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.exp-card {
+  background: white;
+  padding: 20px;
+  width: 95%;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.15);
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  margin: 6px 0;
+  padding: 8px;
+}
+
+.add-btn {
+  background: green;
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-top: 5px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.exp-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.exp-table th,
+.exp-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.ok {
+  background: green;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  margin-right: 4px;
+  border-radius: 4px;
+}
+
+.no {
+  background: red;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+}

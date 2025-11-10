@@ -1,0 +1,235 @@
+/* === Full Page Background === */
+.register-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;                /* full width */
+  height: 100vh;               /* full height */
+  background-size: cover;      /* fill screen */
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../assets/bgrigister.png");
+
+  overflow-y: auto;  /* ✅ allow page scroll */
+}
+
+/* === Semi-Transparent Overlay (blur for readability) === */
+.register-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+/* === Register Card === */
+.register-card {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 30px;
+  border-radius: 12px;
+  width: 420px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+  text-align: left;
+  animation: fadeIn 0.8s ease-in-out;
+
+  max-height: 90vh;   /* ✅ limit card height */
+  overflow-y: auto;   /* ✅ scroll inside card */
+}
+
+/* === Title === */
+.register-card h2 {
+  text-align: center;
+  color: #1a237e;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* === Register Type Buttons === */
+.reg-type {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.reg-type button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f4f4f4;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.reg-type button:hover {
+  background: #e3f2fd;
+  transform: scale(1.02);
+}
+
+.reg-type button.active {
+  background: #1976d2;
+  color: white;
+  border: none;
+  box-shadow: 0 3px 8px rgba(25, 118, 210, 0.4);
+}
+
+/* === Alerts === */
+.alert {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.alert.error {
+  background: #fdecea;
+  color: #c62828;
+}
+
+.alert.success {
+  background: #e6f4ea;
+  color: #2e7d32;
+}
+
+/* === Form Fields === */
+.reg-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.reg-form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.reg-form input,
+.reg-form select {
+  padding: 10px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.reg-form input:focus,
+.reg-form select:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 3px rgba(25, 118, 210, 0.3);
+}
+
+/* === Geo Fields === */
+.geo-fields {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.geo-fields input {
+  flex: 1;
+}
+
+.geo-fields button {
+  background: #1976d2;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.geo-fields button:hover {
+  background: #125ea4;
+}
+
+/* === Submit Button === */
+button[type="submit"] {
+  background: #1976d2;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+button[type="submit"]:hover {
+  background: #0d47a1;
+  transform: scale(1.02);
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* === Footer Link === */
+.link {
+  color: #1976d2;
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.link:hover {
+  color: #0d47a1;
+}
+
+/* === Notes === */
+.note {
+  font-size: 13px;
+  color: #666;
+  margin-top: -5px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* === Animation === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive for Mobile === */
+@media (max-width: 480px) {
+  .register-card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .geo-fields {
+    flex-direction: column;
+  }
+
+  .geo-fields button {
+    width: 100%;
+  }
+}
