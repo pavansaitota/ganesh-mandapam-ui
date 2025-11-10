@@ -2,18 +2,18 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // Auth Pages
-import LoginPage from "../src/pages/Login/LoginPage";
-import RegisterPage from "../src/pages/Register/RegisterPage";
+import LoginPage from "./pages/Login/LoginPage";
+import RegisterPage from "./pages/Register/RegisterPage";
 
 // Main Dashboard
-import Dashboard from "../src/pages/Dashboard/Dashboard";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 // othermodules
-import Events from "../src/pages/Events/Events";
-import Donations from "../src/pages/Donations/Donations";
-import Expenses from "../src/pages/Expenses/Expenses";
-import JoinRequests from "../src/pages/JoinRequests/JoinRequests";
-import EventImages from "../src/pages/EventImages/EventImages";
+import Events from "./pages/Events/Events";
+import Donations from "./pages/Donations/Donations";
+import Expenses from "./pages/Expenses/Expenses";
+import JoinRequests from "./pages/JoinRequests/JoinRequests";
+import EventImages from "./pages/EventImages/EventImages";
 
 // Protected route wrapper
 const PrivateRoute = ({ children }) => {
